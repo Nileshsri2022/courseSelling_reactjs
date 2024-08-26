@@ -4,16 +4,20 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-     "start": "concurrently \"npm run dev\" \"node ./server/index.js\"",
+    "start": "node ./server/index.js",
+  "build": "react-scripts build",
+  "dev": "concurrently \"npm run server\" \"npm run client\"",
+  "server": "nodemon ./server/index.js",
+  "client": "react-scripts start",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "@mui/material": "^5.16.1",
     "axios": "^1.7.2",
+    "express": "^4.19.2",
     "mongoose": "^8.5.1",
+    "nodemon": "^3.1.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "recoil": "^0.7.7"
